@@ -1,0 +1,12 @@
+<p><a href="#/" >Back to Search</a></p>
+<h1>Forecast {{city}}</h1>
+<hr/>
+<a  ng-class= "{ 'bg-primary': days === '2'}" href="#!/forecast/2">2</a> | <a ng-class= "{ 'bg-primary': days === '5'}" href="#!/forecast/5">5</a> | <a ng-class= "{ 'bg-primary': days === '7'}" href="#!/forecast/7">7</a>
+</hr>	
+<div ng-repeat = 'w in weatherResult.list'>
+	<div class='row'>
+		<div class='col-md-12'>
+			<custom-directive weather-day="w" convert-to-standard = 'convertToFarenheit(degk)' convert-to-date='convertDate(dt)' date-format='MMM d,y'></custom-directive>
+		</div>
+	</div>
+</div>
